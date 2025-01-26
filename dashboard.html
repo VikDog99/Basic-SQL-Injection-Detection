@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Cybersecurity Group 3</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome, {{ username }}!</h2>
+        
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-messages">
+                    {% for category, message in messages %}
+                        <div class="flash-message {{ category }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+        
+        <h1 class="group-title">GROUP 3 MEMBERS</h1>
+
+        <table>
+            <tr>
+                <th>S/N</th>
+                <th>Fullname</th>
+                <th>Matric No.</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>LongJohn Fortula Adolphus</td>
+                <td>2023/12791</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Odunaro- Ojomu Muztapha</td>
+                <td>2022/11650</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Manta Moses</td>
+                <td>2023/12855</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Ike- Amakom Chukwukadibia</td>
+                <td>2023/12813</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Olorunfemi Darasimi Azeez</td>
+                <td>2022/11318</td>
+            </tr>
+        </table>
+
+        <a href="{{ url_for('logout') }}" class="btn">Logout</a>
+    </div>
+
+    <footer>
+        <div class="container">
+            Designed by LongJohn Fortula Adolphus (2023/12791)
+        </div>
+    </footer>
+</body>
+</html>
